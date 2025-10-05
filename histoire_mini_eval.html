@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Quiz scolaire – Première Guerre mondiale (1914-1918)</title>
+  <style>
+    :root{--bleu:#2b6cb0;--bleu-fonce:#244f8f;--vert:#1a7a3a;--rouge:#c53030}
+    body{font-family:Arial,Helvetica,sans-serif;line-height:1.5;margin:20px;background:#f4f7fb;color:#222}
+    .container{max-width:900px;margin:0 auto}
+    header{background:#fff;border-radius:8px;padding:16px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+    h1{margin:0;font-size:1.5rem;color:var(--bleu)}
+    p.lead{margin:6px 0 0;color:#333}
+    .card{background:#fff;border-radius:8px;padding:12px;margin:12px 0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+    .q{font-weight:700;margin-bottom:8px}
+    .opts{margin-left:12px}
+    label.opt{display:block;padding:6px;border-radius:6px;margin-bottom:6px;border:1px solid #e6eef9;cursor:pointer}
+    input[type=radio]{margin-right:8px}
+    .tf{display:flex;gap:12px}
+    button.validate{background:var(--bleu);color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;margin-top:10px}
+    button.validate:hover{background:var(--bleu-fonce)}
+    #result{margin-top:16px;font-weight:700}
+    .correction{display:none;margin-top:10px;padding:10px;border-left:4px solid var(--bleu);background:#f0f6ff;border-radius:4px}
+    .correct{border-color:var(--vert)!important}
+    .wrong{border-color:var(--rouge)!important}
+    .small{font-size:0.9rem;color:#333}
+    footer{margin-top:20px;text-align:right;color:#666}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Quiz scolaire — La Première Guerre mondiale (1914-1918)</h1>
+      <p class="lead">35 questions : 20 QCM et 15 vrai/faux. Les corrections et la note sur 20 apparaissent après avoir cliqué sur "Valider mes réponses".</p>
+    </header>
+
+    <form id="quiz">
+
+      <!-- QCM 1-20 -->
+
+      <div class="card">
+        <div class="q">1. Quelle est la date de début généralement admise de la Première Guerre mondiale ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q1" value="A"> A) 28 juin 1919</label>
+          <label class="opt"><input type="radio" name="q1" value="B"> B) 28 juillet 1914</label>
+          <label class="opt"><input type="radio" name="q1" value="C"> C) 11 novembre 1918</label>
+          <div class="correction">Bonne réponse : B) 28 juillet 1914. Déclenchement après l'assassinat de l'archiduc François-Ferdinand.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">2. Quelle bataille est associée à l'année 1916 et fut l'une des plus longues du front occidental ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q2" value="A"> A) La bataille de la Somme</label>
+          <label class="opt"><input type="radio" name="q2" value="B"> B) La bataille de Verdun</label>
+          <label class="opt"><input type="radio" name="q2" value="C"> C) La bataille de Marne</label>
+          <div class="correction">Bonne réponse : B) La bataille de Verdun (février-décembre 1916).</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">3. Que signifie l'expression "guerre de position" ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q3" value="A"> A) Une guerre rapide et mobile</label>
+          <label class="opt"><input type="radio" name="q3" value="B"> B) Une guerre où les armées sont enfermées dans des lignes de tranchées</label>
+          <label class="opt"><input type="radio" name="q3" value="C"> C) Une guerre uniquement navale</label>
+          <div class="correction">Bonne réponse : B) Guerre statique avec tranchées et lignes de front.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">4. Quel est le surnom donné aux soldats français durant la Première Guerre mondiale ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q4" value="A"> A) Tommies</label>
+          <label class="opt"><input type="radio" name="q4" value="B"> B) Poilus</label>
+          <label class="opt"><input type="radio" name="q4" value="C"> C) Doughboys</label>
+          <div class="correction">Bonne réponse : B) Poilus.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">5. Quelle grande puissance se retire du conflit après la révolution de 1917 ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q5" value="A"> A) Royaume-Uni</label>
+          <label class="opt"><input type="radio" name="q5" value="B"> B) France</label>
+          <label class="opt"><input type="radio" name="q5" value="C"> C) Russie</label>
+          <div class="correction">Bonne réponse : C) Russie (après la révolution de 1917 et le traité de Brest-Litovsk en 1918).</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">6. Quel traité impose des conditions sévères à l'Allemagne après la guerre ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q6" value="A"> A) Traité de Versailles</label>
+          <label class="opt"><input type="radio" name="q6" value="B"> B) Traité de Brest-Litovsk</label>
+          <label class="opt"><input type="radio" name="q6" value="C"> C) Traité de Tordesillas</label>
+          <div class="correction">Bonne réponse : A) Traité de Versailles (28 juin 1919).</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">7. Quel type d'armes a profondément modifié la nature des combats (gaz, mitrailleuses, artillerie lourde) ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q7" value="A"> A) Armes traditionnelles seulement</label>
+          <label class="opt"><input type="radio" name="q7" value="B"> B) Armes modernes et industrielles</label>
+          <label class="opt"><input type="radio" name="q7" value="C"> C) Armes nucléaires</label>
+          <div class="correction">Bonne réponse : B) Armes modernes et industrielles; la guerre devient industrielle et meurtrière.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">8. Quelle nation entra en guerre en 1917 côté alliés (envoi massif de troupes) ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q8" value="A"> A) États-Unis</label>
+          <label class="opt"><input type="radio" name="q8" value="B"> B) Japon</label>
+          <label class="opt"><input type="radio" name="q8" value="C"> C) Italie</label>
+          <div class="correction">Bonne réponse : A) États-Unis (entrée officielle en 1917, renforts décisifs à partir de 1918).</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">9. Quel mot décrit l'effort total mobilisant armée, industrie et population ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q9" value="A"> A) Guerre limitée</label>
+          <label class="opt"><input type="radio" name="q9" value="B"> B) Guerre totale</label>
+          <label class="opt"><input type="radio" name="q9" value="C"> C) Guerre froide</label>
+          <div class="correction">Bonne réponse : B) Guerre totale.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">10. Quel événement est souvent cité comme déclencheur immédiat de la guerre (juin 1914) ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q10" value="A"> A) Assassinat de l'archiduc François-Ferdinand</label>
+          <label class="opt"><input type="radio" name="q10" value="B"> B) Chute du mur de Berlin</label>
+          <label class="opt"><input type="radio" name="q10" value="C"> C) Révolution russe</label>
+          <div class="correction">Bonne réponse : A) Assassinat de l'archiduc François-Ferdinand à Sarajevo le 28 juin 1914.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">11. Quel front est principalement associé aux tranchées et aux batailles d'usure en France et en Belgique ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q11" value="A"> A) Front occidental</label>
+          <label class="opt"><input type="radio" name="q11" value="B"> B) Front oriental</label>
+          <label class="opt"><input type="radio" name="q11" value="C"> C) Front balcanique</label>
+          <div class="correction">Bonne réponse : A) Front occidental.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">12. Qui étaient les "Tommies" pendant la guerre ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q12" value="A"> A) Soldats britanniques</label>
+          <label class="opt"><input type="radio" name="q12" value="B"> B) Soldats français</label>
+          <label class="opt"><input type="radio" name="q12" value="C"> C) Soldats américains</label>
+          <div class="correction">Bonne réponse : A) Soldats britanniques, surnom courant pour les soldats du Royaume-Uni.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">13. Quelle région fut le théâtre d'un génocide pendant la guerre (1915-1916) ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q13" value="A"> A) Arménie</label>
+          <label class="opt"><input type="radio" name="q13" value="B"> B) Irlande</label>
+          <label class="opt"><input type="radio" name="q13" value="C"> C) Norvège</label>
+          <div class="correction">Bonne réponse : A) Arménie (génocide arménien 1915-1916).</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">14. Quel est le rôle de la propagande durant la guerre ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q14" value="A"> A) Informer de façon neutre</label>
+          <label class="opt"><input type="radio" name="q14" value="B"> B) Influencer l'opinion en faveur de l'effort de guerre</label>
+          <label class="opt"><input type="radio" name="q14" value="C"> C) Organiser des cérémonies religieuses</label>
+          <div class="correction">Bonne réponse : B) Influencer l'opinion publique et encourager le soutien à la guerre.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">15. Quel pays faisait partie des Empires centraux ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q15" value="A"> A) Allemagne</label>
+          <label class="opt"><input type="radio" name="q15" value="B"> B) France</label>
+          <label class="opt"><input type="radio" name="q15" value="C"> C) Royaume-Uni</label>
+          <div class="correction">Bonne réponse : A) Allemagne (avec l'Autriche-Hongrie, l'Empire ottoman, la Bulgarie).</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">16. Quelle invention de la guerre a permis de mieux protéger les soldats contre le feu ennemi ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q16" value="A"> A) Le blindage des chars</label>
+          <label class="opt"><input type="radio" name="q16" value="B"> B) Les tranchées</label>
+          <label class="opt"><input type="radio" name="q16" value="C"> C) L'avion de chasse</label>
+          <div class="correction">Bonne réponse : B) Les tranchées; elles offrent protection face à l'artillerie et aux tirs.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">17. Quelle est la date de l'armistice qui met fin aux combats ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q17" value="A"> A) 11 novembre 1918</label>
+          <label class="opt"><input type="radio" name="q17" value="B"> B) 28 juin 1919</label>
+          <label class="opt"><input type="radio" name="q17" value="C"> C) 1er janvier 1917</label>
+          <div class="correction">Bonne réponse : A) 11 novembre 1918.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">18. Quel est le principal objectif d'un blocus maritime pendant la guerre ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q18" value="A"> A) Empêcher l'ennemi de commercer et d'être ravitaillé</label>
+          <label class="opt"><input type="radio" name="q18" value="B"> B) Organiser des batailles navales amicales</label>
+          <label class="opt"><input type="radio" name="q18" value="C"> C) Transporter des troupes sur les plages</label>
+          <div class="correction">Bonne réponse : A) Empêcher l'ennemi d'obtenir ressources et vivres.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">19. Quel pays a été l'un des principaux vainqueurs diplomatiques après la guerre ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q19" value="A"> A) Allemagne</label>
+          <label class="opt"><input type="radio" name="q19" value="B"> B) Royaume-Uni</label>
+          <label class="opt"><input type="radio" name="q19" value="C"> C) Empire ottoman</label>
+          <div class="correction">Bonne réponse : B) Royaume-Uni (avec la France et les États-Unis jouant des rôles majeurs).</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">20. Quel événement politique majeur a lieu en Russie en 1917 ?</div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="q20" value="A"> A) Révolution</label>
+          <label class="opt"><input type="radio" name="q20" value="B"> B) Indépendance de la Pologne</label>
+          <label class="opt"><input type="radio" name="q20" value="C"> C) Signature du traité de Versailles</label>
+          <div class="correction">Bonne réponse : A) Révolution (février et octobre 1917, donnant lieu à la prise de pouvoir par les Bolcheviks).</div>
+        </div>
+      </div>
+
+      <!-- Vrai/Faux 21-35 -->
+
+      <div class="card">
+        <div class="q">21. Vrai ou Faux : La guerre de 1914-1918 est souvent appelée "guerre totale".</div>
+        <div class="opts tf">
+          <label class="opt"><input type="radio" name="q21" value="Vrai"> Vrai</label>
+          <label class="opt"><input type="radio" name="q21" value="Faux"> Faux</label>
+          <div class="correction">Bonne réponse : Vrai. La mobilisation porte sur l'ensemble de la société et de l'économie.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">22. Vrai ou Faux : Les poilus étaient des soldats allemands.</div>
+        <div class="opts tf">
+          <label class="opt"><input type="radio" name="q22" value="Vrai"> Vrai</label>
+          <label class="opt"><input type="radio" name="q22" value="Faux"> Faux</label>
+          <div class="correction">Bonne réponse : Faux. "Poilus" désigne les soldats français.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">23. Vrai ou Faux : Le traité de Versailles a été signé avant l'armistice de 1918.</div>
+        <div class="opts tf">
+          <label class="opt"><input type="radio" name="q23" value="Vrai"> Vrai</label>
+          <label class="opt"><input type="radio" name="q23" value="Faux"> Faux</label>
+          <div class="correction">Bonne réponse : Faux. L'armistice est du 11 novembre 1918 ; le traité de Versailles est signé le 28 juin 1919.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">24. Vrai ou Faux : Le génocide arménien a eu lieu pendant la Première Guerre mondiale.</div>
+        <div class="opts tf">
+          <label class="opt"><input type="radio" name="q24" value="Vrai"> Vrai</label>
+          <label class="opt"><input type="radio" name="q24" value="Faux"> Faux</label>
+          <div class="correction">Bonne réponse : Vrai. Les événements tragiques ont eu lieu principalement en 1915-1916.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">25. Vrai ou Faux : Les États-Unis sont restés neutres pendant toute la guerre.</div>
+        <div class="opts tf">
+          <label class="opt"><input type="radio" name="q25" value="Vrai"> Vrai</label>
+          <label class="opt"><input type="radio" name="q25" value="Faux"> Faux</label>
+          <div class="correction">Bonne réponse : Faux. Les États-Unis entrent en guerre en 1917 aux côtés des Alliés.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">26. Vrai ou Faux : La bataille de la Somme a causé d'énormes pertes en 1916.</div>
+        <div class="opts tf">
+          <label class="opt"><input type="radio" name="q26" value="Vrai"> Vrai</label>
+          <label class="opt"><input type="radio" name="q26" value="Faux"> Faux</label>
+          <div class="correction">Bonne réponse : Vrai. La Somme (1916) a été l'une des plus sanglantes.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">27. Vrai ou Faux : La révolution russe a affaibli l'effort de guerre russe et entraîné sa sortie du conflit.</div>
+        <div class="opts tf">
+          <label class="opt"><input type="radio" name="q27" value="Vrai"> Vrai</label>
+          <label class="opt"><input type="radio" name="q27" value="Faux"> Faux</label>
+          <div class="correction">Bonne réponse : Vrai. La révolution de 1917 mène à la signature du traité de Brest-Litovsk et à la sortie de la Russie.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">28. Vrai ou Faux : La censure et la propagande étaient absentes pendant la guerre.</div>
+        <div class="opts tf">
+          <label class="opt"><input type="radio" name="q28" value="Vrai"> Vrai</label>
+          <label class="opt"><input type="radio" name="q28" value="Faux"> Faux</label>
+          <div class="correction">Bonne réponse : Faux. Censure et propagande ont été largement utilisées pour maintenir le moral et contrôler l'information.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">29. Vrai ou Faux : Les civils n'ont pas été touchés par les combats et les pénuries.</div>
+        <div class="opts tf">
+          <label class="opt"><input type="radio" name="q29" value="Vrai"> Vrai</label>
+          <label class="opt"><input type="radio" name="q29" value="Faux"> Faux</label>
+          <div class="correction">Bonne réponse : Faux. Les civils ont subi bombardements, rationnement et déportations.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">30. Vrai ou Faux : Les mutineries ont eu lieu dans certaines armées en 1917.</div>
+        <div class="opts tf">
+          <label class="opt"><input type="radio" name="q30" value="Vrai"> Vrai</label>
+          <label class="opt"><input type="radio" name="q30" value="Faux"> Faux</label>
+          <div class="correction">Bonne réponse : Vrai. Certaines armées, notamment françaises, ont connu des mutineries en 1917.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">31. Vrai ou Faux : Le terme "diktat" a été utilisé par les vaincus pour qualifier le traité de Versailles.</div>
+        <div class="opts tf">
+          <label class="opt"><input type="radio" name="q31" value="Vrai"> Vrai</label>
+          <label class="opt"><input type="radio" name="q31" value="Faux"> Faux</label>
+          <div class="correction">Bonne réponse : Vrai. Beaucoup d'Allemands ont qualifié le traité de "diktat".</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">32. Vrai ou Faux : La Première Guerre mondiale n'a eu aucune conséquence politique durable.</div>
+        <div class="opts tf">
+          <label class="opt"><input type="radio" name="q32" value="Vrai"> Vrai</label>
+          <label class="opt"><input type="radio" name="q32" value="Faux"> Faux</label>
+          <div class="correction">Bonne réponse : Faux. Conséquences : chute d'empires, révolutions, redécoupage des frontières.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">33. Vrai ou Faux : Le front oriental était caractérisé par des combats plus mobiles qu'à l'ouest.</div>
+        <div class="opts tf">
+          <label class="opt"><input type="radio" name="q33" value="Vrai"> Vrai</label>
+          <label class="opt"><input type="radio" name="q33" value="Faux"> Faux</label>
+          <div class="correction">Bonne réponse : Vrai. Le front oriental était plus vaste et plus mobile que le front occidental.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">34. Vrai ou Faux : Les femmes ont participé à l'effort de guerre, notamment en travaillant dans les usines.</div>
+        <div class="opts tf">
+          <label class="opt"><input type="radio" name="q34" value="Vrai"> Vrai</label>
+          <label class="opt"><input type="radio" name="q34" value="Faux"> Faux</label>
+          <div class="correction">Bonne réponse : Vrai. La mobilisation a entraîné une hausse du travail féminin dans l'industrie et les services.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="q">35. Vrai ou Faux : Les bombardements aériens ont été totalement absents pendant la Première Guerre mondiale.</div>
+        <div class="opts tf">
+          <label class="opt"><input type="radio" name="q35" value="Vrai"> Vrai</label>
+          <label class="opt"><input type="radio" name="q35" value="Faux"> Faux</label>
+          <div class="correction">Bonne réponse : Faux. Les avions et les raids aériens existaient déjà et ont touché civils et infrastructures.</div>
+        </div>
+      </div>
+
+      <button type="button" class="validate" onclick="valider()">Valider mes réponses</button>
+    </form>
+
+    <div id="result" class="card" style="display:none"></div>
+
+    <footer>
+      <small>Thème : scolaire • Quiz interactif — réponses montrées uniquement après validation</small>
+    </footer>
+  </div>
+
+  <script>
+    const answers = {
+      q1: 'B', q2: 'B', q3: 'B', q4: 'B', q5: 'C', q6: 'A', q7: 'B', q8: 'A', q9: 'B', q10: 'A',
+      q11: 'A', q12: 'A', q13: 'A', q14: 'B', q15: 'A', q16: 'B', q17: 'A', q18: 'A', q19: 'B', q20: 'A',
+      q21: 'Vrai', q22: 'Faux', q23: 'Faux', q24: 'Vrai', q25: 'Faux', q26: 'Vrai', q27: 'Vrai', q28: 'Faux', q29: 'Faux', q30: 'Vrai',
+      q31: 'Vrai', q32: 'Faux', q33: 'Vrai', q34: 'Vrai', q35: 'Faux'
+    };
+
+    function valider(){
+      const form = document.getElementById('quiz');
+      let correctCount = 0;
+      const totalQ = Object.keys(answers).length; // 35
+
+      for(const key in answers){
+        const els = form.elements[key];
+        // els can be RadioNodeList
+        let selected = '';
+        if(!els) selected = '';
+        else{
+          if(els.length === undefined){
+            // single element (shouldn't happen here)
+            selected = els.value || '';
+          } else {
+            for(const radio of els){
+              const parent = radio.closest('label.opt');
+              if(radio.checked){ selected = radio.value; }
+            }
+          }
+        }
+
+        // show correction area
+        // find the correction div next to options
+        const firstEl = form.querySelector(`[name=${key}]`);
+        if(firstEl){
+          // climb to card and reveal correction
+          let card = firstEl.closest('.card');
+          if(card){
+            const corr = card.querySelector('.correction');
+            if(corr) corr.style.display = 'block';
+            // mark selected option green/red
+            const radios = card.querySelectorAll('input[type=radio]');
+            radios.forEach(r => {
+              const lab = r.closest('label.opt');
+              if(lab){ lab.classList.remove('correct','wrong'); }
+              if(r.checked){
+                if(r.value === answers[key]){
+                  if(lab) lab.classList.add('correct');
+                } else {
+                  if(lab) lab.classList.add('wrong');
+                }
+              }
+              // also highlight the correct option
+              if(r.value === answers[key]){
+                const labc = r.closest('label.opt');
+                if(labc) labc.style.outline = '2px solid rgba(43,108,176,0.25)';
+              }
+            });
+          }
+        }
+
+        if(selected === answers[key]) correctCount++;
+      }
+
+      // Calcul de la note sur 20
+      const note = (correctCount / totalQ) * 20;
+      const resultBox = document.getElementById('result');
+      resultBox.style.display = 'block';
+      resultBox.innerHTML = `Vous avez <strong>${correctCount}</strong> bonnes réponses sur <strong>${totalQ}</strong>.<br>Note : <strong>${note.toFixed(1)}</strong> / 20`;
+
+      // scroll to result
+      resultBox.scrollIntoView({behavior:'smooth'});
+
+      // désactiver le bouton pour empêcher re-validation immédiate
+      document.querySelector('.validate').disabled = true;
+      document.querySelector('.validate').style.opacity = 0.6;
+    }
+  </script>
+</body>
+</html>
